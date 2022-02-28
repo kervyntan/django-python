@@ -19,3 +19,8 @@ def peking_duck (request):
 
 def dynamic_view (request, topic): ### dynamic view
     return HttpResponse(articles[topic])
+
+def add_view (request, num1, num2):
+    #domain.com/my_app/num1/num2
+    result = num1 + num2
+    return HttpResponse(str(result))
