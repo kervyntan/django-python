@@ -12,5 +12,6 @@ urlpatterns = [
     path('index/', views.index, name="index"), #directory, call to view, name
     path('peking/', views.peking_duck, name="peking"),
     path('<topic>/', views.dynamic_view), ## dynamic view
-    path('<int:num1>/<int:num2>', views.add_view) ## dynamic view, path converter 
+    path('<int:num1>/<int:num2>', views.add_view), ## dynamic view, path converter 
+    path('<int:num_page>', views.num_page_view)
 ]
