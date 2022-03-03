@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os ##built-in library that joins paths automatically when other ppl use
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,7 +55,8 @@ ROOT_URLCONF = 'my_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+            'DIRS': [os.path.join(BASE_DIR,'templates/')], 
+            #tells django to look in BASE_DIR (django-project-first), then into templates, then...
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

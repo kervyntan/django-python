@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseNotFound, Http404, HttpResponseRedirect
-
+from django.urls import reverse
 # Create your views here.
 # view 1
 articles = {
@@ -38,4 +38,10 @@ def add_view (request, num1, num2):
 def num_page_view (request, num_page):
     topics_list =  list(articles.keys()) # ['sports', 'finance']
     topic = topics_list[num_page] # for eg. topics_list[0] = 'sports'
-    return HttpResponseRedirect(topic)
+    
+    webpage = reverse('dynamic_view',args=[topic])
+    return HttpResponseRedirect(webpage)
+
+def html_view (request):
+    ## render(request, template_name, context)
+    return render(request, 'my_app/example.html') #.html
