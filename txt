@@ -1,0 +1,17 @@
+### This file contains important stuff learnt from previous lectures 
+
+## Section 9 - Views, URLs, routing
+Using paths 
+Redirecting:
+    - URL paths inside path() function can have *names* that can be referenced
+    - Django has a reverse() function to find the corresponding URL path
+      from a URL name
+NOTE: The path to be redirected to must come AFTER the function that redirects
+path('<int:num_page>/', views.num_page_view),
+path('<str:topic>/', views.dynamic_view, name="dynamic_view") -> redirected to here
+
+Settings.py file -> "TEMPLATES" dictionary -> DIR list
+SET app_dirs to TRUE -> so it'll crawl app folder
+
+'DIRS': [os.path.join(BASE_DIR,'templates/')], 
+#tells django to look in BASE_DIR (django-project-first), then into templates, then...
